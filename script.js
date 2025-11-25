@@ -24,20 +24,20 @@ getPostTitle(6)
 //il dado si "incastra" e la Promise va in reject.
 
 const lanciaDado = () => {
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
             const errore = Math.random();
-    
-            if(errore < 0.2){
+
+            if (errore < 0.2) {
                 reject("Il dado si è incastrato");
-            }else{
+            } else {
                 const result = Math.floor(Math.random() * 6) + 1; // numero tra 1 e 6
                 resolve(result);
             }
-        }, 3000)
+        }, 1000)
     })
 }
 
 lanciaDado()
-.then(obj=>console.log(obj))
-.catch(error => console.error(error))
+    .then(obj => console.log(obj))
+    .catch(error => console.error(error))
